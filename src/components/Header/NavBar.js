@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import {
-    Box, Flex, Icon, useDisclosure, IconButton, Image, Stack,
+    Box, Flex, Icon, useDisclosure, IconButton, Image,
     Collapse, Badge,
     useBreakpointValue,
     Spacer,
@@ -37,7 +37,7 @@ const NavBar = () => {
                         aria-label={'Toggle Navigation'}
                     />
                 </Flex>
-                
+                <Spacer display={{ base: 'none', md: 'flex' }}/>
                 <Flex  justify={{ base: 'center', md: 'start' }} >
                     <Link to="/"><Image src={require('./JUMPER_logo.png')} w={120} align={useBreakpointValue({ base: 'center', md: 'left' })} /></Link>
 
@@ -53,7 +53,9 @@ const NavBar = () => {
                     <Icon color="#ED8936" cursor="pointer" as={MdShoppingBasket} w={30} h={30} onClick={() => openCart()} />
                     <Badge backgroundColor="#FFFFFF" borderRadius={'100%'} h={4}>{checkout?.lineItems?.length}</Badge>
                 </Flex>
+                <Spacer display={{ base: 'none', md: 'flex' }}/>
             </Flex>
+
             <Collapse in={isOpen} animateOpacity>
                 <MobileNav />
             </Collapse>
